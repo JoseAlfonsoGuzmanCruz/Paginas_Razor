@@ -22,5 +22,6 @@ namespace Paginas_Razor
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
     }
 }
