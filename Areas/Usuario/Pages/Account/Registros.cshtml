@@ -1,4 +1,8 @@
-﻿@page
+﻿@*personalizar url y enviar datos por medio de url*@
+@*se envia información por url ya que las paginas no cuentan con un controlador*@
+@*en su lugar se usa la clase referente a la pagina*@
+@page "/Usuario/Registro" 
+            ""
 @*@model Paginas_Razor.Areas.Usuario.Pages.Account.RegistrosModel*@
 @model RegistrosModel
 @{
@@ -21,16 +25,23 @@
             
             <div class="container">
                 <div class="form">
-                    <h2>Login Form</h2>
-                    <form>
+                    <h2>Register</h2>
+                    <form method="post">
                         <div class="inputBox">
-                            <input type="text" placeholder="User name">
+                            <input asp-for="Input.Name" placeholder="User name" class="form-control">
+                            <span asp-validation-for="Input.Name" class="text-danger"></span>
                         </div>
                         <div class="inputBox">
-                            <input type="text" placeholder="Folio">
+                            <input asp-for="Input.Mail" placeholder="Mail" class="form-control">
+                            <span asp-validation-for="Input.Mail" class="text-danger"></span>
                         </div>
                         <div class="inputBox">
-                            <input type="password" placeholder="Password">
+                            <input asp-for="Input.Password" placeholder="Password" class="form-control">
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="inputBox">
+                            <input asp-for="Input.ConfirmPassword" placeholder="Confirm password" class="form-control">
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                         </div>
                         <div class="inputBox">
                             <input type="submit" value="Register">
@@ -42,3 +53,6 @@
         </div>
     </section>
 </body>
+@section Scripts{ 
+    <partial name="_ValidationScriptsPartial" />
+}
