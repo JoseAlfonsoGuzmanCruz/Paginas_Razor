@@ -28,8 +28,8 @@
                     <h2>Register</h2>
                     <form method="post">
                         <div class="inputBox">
-                            <input asp-for="Input.Name" placeholder="User name" class="form-control">
-                            <span asp-validation-for="Input.Name" class="text-danger"></span>
+                            <input asp-for="Input.Name" placeholder="User name" class="form-control">@*txt que recibe informacion*@
+                            <span asp-validation-for="Input.Name" class="text-danger"></span>@*mensaje de error si no es valida la informacion*@
                         </div>
                         <div class="inputBox">
                             <input asp-for="Input.Mail" placeholder="Mail" class="form-control">
@@ -46,7 +46,7 @@
                         <div class="inputBox">
                             <input type="submit" value="Register">
                         </div>
-                        <p class="forget">Do you have an account? <a href="#">Sign up</a></p>
+                        <p class="forget">Do you have an account? <a href="#">Sign up</a></p>@*se puede redireccionar a otra pagina de login*@
                     </form>
                 </div>
             </div>
