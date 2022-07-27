@@ -11,6 +11,7 @@ namespace Paginas_Razor.Areas.Usuario.Pages.Account
     public class RegistrosModel : PageModel
     {
         //public string data { get; set; }
+        //captura la información cada que se envia 
         public void OnGet(string data)
         {
             //this.data = data;
@@ -38,6 +39,13 @@ namespace Paginas_Razor.Areas.Usuario.Pages.Account
             [DataType(DataType.Password)]
             [Compare("Password", ErrorMessage ="The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+        }
+        //IActionResult retorna la pagina
+        public IActionResult OnPost()//obtener informacion de la pagina usando (method post)
+        {
+            //se usa (Input) por el InputModel que se uso del model y de esa forma usar sus propiedades.
+            var data = Input;//pasar la informacion de Input a data.
+            return Page();
         }
     }
 }
